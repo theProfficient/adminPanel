@@ -1,0 +1,39 @@
+
+.parentContainer {
+    background-image: url('../../assets/mix.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .formContainer {
+    background-color: rgba(0, 0, 255, 0.808);
+    padding: 20px;
+    width: 350px;
+    border-radius: 50px;
+  }
+  
+  
+  .inputContainer {
+    margin-bottom: 10px; 
+  }
+  
+  .loginButton {
+    background-color: gray;
+    margin-left: 90px;
+    width: 100px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .loginButton:hover {
+    background-color: red;
+    
+  }
+  

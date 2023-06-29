@@ -1,26 +1,47 @@
-// app.js is the parent file of project thats why we call/ import all the files here like home ,contact etc
-// create routes here
-
-
-import React from "react";
-import "./index.css"
+import React, { useState } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import BasicForm from "./components/forms/basicForm";
 import Home from "./routes/Home";
-import About from "./routes/About";
+import Dashboard from "./routes/Dashboard";
 import Contact from "./routes/Contact";
-import Project from "./routes/Project";
-import { Route, Routes } from "react-router-dom";     // import file and folder of route
+import Games from "./routes/Games";
+import CreateTournament from './routes/CreateTournament';
+import Cricket from "./components/games/Cricket";
+import SnakeLadder from "./components/games/SnakeLadder";
+import UserHistory from "./components/UserHistory";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
   return (
- <>
-    {/* call routers here inside the route using react router Dom */}
-  <Routes>
-<Route path="/" element={<Home/>}/>        {/* call router here this path is shown url with this name in search bar of page when we click on that page  and for home use only / for path and alwys initially we will in home page */}
-<Route path="/project" element={<Project/>}/> 
-<Route path="/about" element={<About/>}/> 
-<Route path="/contact" element={<Contact/>}/> 
-</Routes>
-  </>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={!isLoggedIn ? <BasicForm onLogin={handleLogin} /> : <Navigate to="/home" />}
+        />
+        <Route path="/games" element={isLoggedIn ? <Games /> : <Navigate to="/" />} />
+        <Route
+          path="/dashboard"
+          element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/contact"
+          element={isLoggedIn ? <Contact /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/createTournament"
+          element={isLoggedIn ? <CreateTournament /> : <Navigate to="/" />}
+        /> {/* Update the route path and component name */}
+        <Route path="/home" element={isLoggedIn ? <Home /> : <Navigate to="/" />} />
+        <Route path="/games/cricket" element={<Cricket />} />
+        <Route path="/games/snakeLadder" element={<SnakeLadder />} />
+        <Route path="/user/history" element={<UserHistory />} />
+      </Routes>
+    </>
   );
 }
 

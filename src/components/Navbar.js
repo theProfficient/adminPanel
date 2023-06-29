@@ -25,7 +25,7 @@ return (
     <div className= { color ? "header header-bg" :
     "header"}>                   {/* use header here this is the parent class */}
         <Link to="/">                           {/* link is use to when we click on name of page then it will redirected to that page ex-portfolio name */}
-        <h1>portfolio</h1>
+        <h1>ADMIN PANEL</h1>
         </Link>
                   {/* if click   then goto this    if not click then goto nav-menu */}
         <ul className= {click ? "nav-menu active" : "nav-menu"}>          {/* use this class name for style in navbar.css file */}
@@ -34,10 +34,13 @@ return (
          </li>
          <li>
              {/*        urlname   name of component     */}
-            <Link to ="/project">Project</Link>
+            <Link to ="/games">Games</Link>
          </li>
          <li>
-            <Link to ="/about"> About</Link>
+            <Link to ="/dashboard"> Dashboard</Link>
+         </li>
+         <li>
+            <Link to ="/createTournament"> CreateTournament</Link>
          </li>
          <li>
             <Link to ="/contact">Contact</Link>
