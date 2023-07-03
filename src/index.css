@@ -9,11 +9,11 @@
   box-sizing: border-box;    /* use for width and height of element */
   margin: 0;                   /* margin is the outermost layer */
   padding: 0;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', Arial;
 }
 
 body{
-  background: #000;
+  background: #1b6792;
 }
 
 h1,
@@ -32,7 +32,7 @@ ul{
   padding: 12px 32px;
   font-size: 1rem;
   text-transform: uppercase ;
-  background: rgb(248, 217, 15);
+  background: rgb(212, 210, 196);
   color: #222;
   border: 1px solid #fff;
   font-weight: 600;

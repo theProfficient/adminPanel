@@ -9,7 +9,7 @@ const CricketData = () => {
 
   useEffect(() => {
     axios
-      .get('https://snakeladder-c5dz.onrender.com/tables')
+      .get('https://snakeladder1.azurewebsites.net/tables')
       .then(response => {
         setCricketData(response.data.data);
         console.log(response.data.data);
@@ -21,7 +21,6 @@ const CricketData = () => {
       });
   }, []);
   
-
   if (cricketData === null) {
     return <div>Loading...</div>; // Show a loading indicator while data is being fetched
   }

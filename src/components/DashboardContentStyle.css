@@ -1,19 +1,19 @@
 .table {
     width: 100%;
     border-collapse: collapse;
-    color: white;
-  }
+    color: rgb(255, 255, 255);
+  }                                          
   
   .table th {
     padding: 10px;
     background-color: rgb(0, 213, 255);
     text-align: left;
-    font-family:Arial, Helvetica, sans-serif;;
+    font-family:Arial,Arial, Arial;;
   }
   
   .table td {
     padding: 10px;
-    border: 1px solid white;
+    border: 1px solid rgb(255, 255, 255);
   }
   
   .button {
@@ -25,34 +25,34 @@
 
   .edit-button {
     background-color: #fff;
-    color: #007bff;
-    border: 1px solid #007bff;
+    color: #3d83ce;
+    border: 1px solid #3d83ce;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
   }
   
   .edit-button:hover {
-    background-color: #007bff;
+    background-color: #3d83ce;
     color: #fff;
   }
   .userHistory-button {
     background-color: #fff;
-    color: #007bff;
-    border: 1px solid #007bff;
+    color: #3d83ce;
+    border: 1px solid #3d83ce;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
   }
   
   .userHistory-button:hover {
-    background-color: #007bff;
+    background-color: #3d83ce;
     color: #fff;
   }
  .button.save-button {
   background-color: #fff;
-  color: #007bff;
-  border: 1px solid #007bff;
+  color:#3d83ce;
+  border: 1px solid #3d83ce;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -74,13 +74,13 @@
   padding: 5px 10px;
   border: none;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #3d83ce;
   color: #fff;
   cursor: pointer;
 }
 
 .pagination button:hover {
-  background-color: #0069d9;
+  background-color: #3d83ce;
 }
 
 .search-container {

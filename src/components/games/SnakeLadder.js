@@ -9,7 +9,8 @@ const SnakeLadderData = () => {
 
   useEffect(() => {
     axios
-      .get('https://snakeladder-c5dz.onrender.com/getAllSnakeLadderData')
+      .get('https://snakeladder1.azurewebsites.net/getAllSnakeLadderData')
+      
       .then(response => {
         setSnakeLadderData(response.data.data);
         console.log(response.data.data);

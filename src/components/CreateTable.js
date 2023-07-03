@@ -26,11 +26,11 @@ const CreateTournaments = () => {
       let response;
       // Send POST request to the API endpoint
       if (gameName.toLowerCase() === 'cricket') {
-        response = await axios.post('https://snakeladder-c5dz.onrender.com/tournamentsByAdmin', tournament);
+        response = await axios.post('https://snakeladder1.azurewebsites.net/tournamentsByAdmin', tournament);
         // Log the response data
         console.log('Tournament for cricket created successfully:', response.data.data);
       } else if (gameName.toLowerCase() === 'snakeladder') {
-        response = await axios.post('https://snakeladder-c5dz.onrender.com/snktournamentsByAdmin', tournament);
+        response = await axios.post('https://snakeladder1.azurewebsites.net/snktournamentsByAdmin', tournament);
         // Log the response data
         console.log('Tournament for snakeLadder created successfully:', response.data.data);
       } else {

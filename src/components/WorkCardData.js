@@ -1,21 +1,21 @@
 import game1 from "../assets/cricket.jpg"
 import game2 from "../assets/snakeLadder.jpg"
-import game3 from "../assets/tictactoe.jpg"
-import game4 from "../assets/airHockey.jpg";
+import game3 from "../assets/tictactoe1.jpg"
+import game4 from "../assets/airHocky1.webp";
 import { Route, Routes, Navigate } from "react-router-dom";
 
 const gamesCardData = [
     {
         imgsrc: game1,
-        title:"cricket",
-        text:"Bat, ball and field your way to the top of the league in this fast, fun, exciting and authentic 3D real-time multiplayer Cricket game.",
+        title:"Cricket",
+        text:"Cricket is a sport that requires the use of a bat and ball. It is easily one of the most prevalent sports in the world.",
         view:"/games/cricket"
     },
 
     {
         imgsrc: game2,
         title:"SnakeLadder",
-        text:"100 squares full of traps and tricks…Roll the dice and try your luck! Ladders will take you up but Snakes will take you down! Are you afraid of serpents?",
+        text:"Snakes and Ladders is a chance-based board game featuring 100 squares. Players have to get to the top while dealing with the consequences of every dice roll.",
         view:"/games/snakeLadder"
     },
 

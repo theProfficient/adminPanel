@@ -35,12 +35,12 @@ const Footer = () => {
                 <h4>About Us</h4>
                 <p> We are an Ultimate Guide for Starting a Multigaming Business .</p>
                 <div className="social">
-                    <FaInstagram size={30} style={{color:"#fff", marginRight:"1rem"}}/>
-                    theProficient333@gmail.com
-                    <FaFacebook size={30} style={{color:"#fff", marginRight:"1rem"}}/>
-                    theProficientTech
-                    <FaLinkedin size={30} style={{color:"#fff", marginRight:"1rem"}}/>
-                    theProficientTech
+                    <FaInstagram size={25} style={{color:"#fff", marginRight:"1rem"}}/>
+                    {/* gmail.com url*/}
+                    <FaFacebook size={25} style={{color:"#fff", marginRight:"1rem"}}/>
+                    {/* facebook url */}
+                    <FaLinkedin size={25} style={{color:"#fff", marginRight:"1rem"}}/>
+                    {/* linkedin url*/}
                 </div>
             </div>
 </div>
