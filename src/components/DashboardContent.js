@@ -105,9 +105,9 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="search-container">
-        <input className="search-input" type="text" placeholder="Search UserId" />
-      </div>
+      {/* <div className="search-container"> */}
+        {/* <input className="search-input" type="text" placeholder="Search UserId" /> */}
+      {/* </div> */}
       <table className="table">
         <thead>
           <tr>
