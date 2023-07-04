@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './DashboardContentStyle.css';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import UserHistory from './UserHistory.js';
 
+
 const Dashboard = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [userData, setUserData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [showUserHistory, setShowUserHistory] = useState(false);
-
-  useEffect(() => {
-    const storedPage = sessionStorage.getItem('dashboardPage');
-    if (storedPage) {
-      setCurrentPage(parseInt(storedPage));
-    }
-  }, []);
-
-  useEffect(() => {
-    sessionStorage.setItem('dashboardPage', currentPage.toString());
-  }, [currentPage]);
 
   useEffect(() => {
     axios
@@ -35,7 +26,10 @@ const Dashboard = () => {
       });
   }, []);
 
+
   useEffect(() => {
+    // Check if the current location path is '/dashboard' and if the showUserHistory state is true
+    // If both conditions are true, set the showUserHistory state to false
     if (location.pathname === '/dashboard' && showUserHistory) {
       setShowUserHistory(false);
     }
@@ -120,6 +114,9 @@ const Dashboard = () => {
 
   return (
     <div>
+      {/* <div className="search-container"> */}
+        {/* <input className="search-input" type="text" placeholder="Search UserId" /> */}
+      {/* </div> */}
       <table className="table">
         <thead>
           <tr>
@@ -232,7 +229,7 @@ const Dashboard = () => {
         </button>
       </div>
 
-      {showUserHistory && <UserHistory UserId={selectedUserId} />}
+      {/* {showUserHistory && <UserHistory UserId={selectedUserId} />} */}
     </div>
   );
 };
