@@ -30,7 +30,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Check if the current location path is '/dashboard' and if the showUserHistory state is true
     // If both conditions are true, set the showUserHistory state to false
-    if (location.pathname === '/https://adminpanel-aen0.onrender.com/dashboard' && showUserHistory) {
+    if (location.pathname === 'https://adminpanel-aen0.onrender.com/dashboard' && showUserHistory) {
       setShowUserHistory(false);
     }
   }, [location.pathname, showUserHistory]);

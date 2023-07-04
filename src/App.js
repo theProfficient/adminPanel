@@ -25,7 +25,7 @@ function App() {
         />
         <Route path="/games" element={isLoggedIn ? <Games /> : <Navigate to="/" />} />
         <Route
-          path="/dashboard"
+          path="https://adminpanel-aen0.onrender.com/dashboard"
           element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}
         />
         <Route
