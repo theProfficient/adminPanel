@@ -17,8 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run custom-build",
-    "custom-build": "echo Performing custom build tasks... && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -26,9 +25,7 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ],
-    "rules": {
-    }
+    ]
   },
   "browserslist": {
     "production": [
