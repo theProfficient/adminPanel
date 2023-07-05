@@ -9,7 +9,7 @@ const SnakeLadderData = () => {
   const [itemsPerPage] = useState(5);
 
   useEffect(() => {
-    const socket = io('http://localhost:3000'); // Replace with your Socket.IO server URL
+    const socket = io('http://localhost:3099'); // Replace with your Socket.IO server URL
 
     socket.on('connect', () => {
       console.log('Connected to Socket.IO server');
