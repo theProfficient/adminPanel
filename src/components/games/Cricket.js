@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CricketStyle.css';
-import { io } from 'socket.io-client';
 
 const CricketData = () => {
   const [cricketData, setCricketData] = useState(null);
@@ -9,29 +8,7 @@ const CricketData = () => {
   const [itemsPerPage] = useState(5);
 
   useEffect(() => {
-    const socket = io('http://localhost:3099'); // Replace with your Socket.IO server URL
-
-    socket.on('connect',() => {
-      console.log('connected to Socket.IO server');
-    });
-
-    socket.on('databaseChanges',(data) => {
-      const {collection, change} = data;
-      console.log(`Received database change in collection ${collection}:`, change);
-      // Fetch updated data from server when a change occurs
-      fetchCricketData()
-    });
-
-    return () => {
-      socket.disconnect(); // Disconnect from Socket.IO server on component unmount
-    };
-  },[]);
-
-    useEffect(() =>{
-      fetchCricketData()
-    }, [])
-    const fetchCricketData = () => {
-      axios
+    axios
       // .get('https://snakeladder1.azurewebsites.net/tables')
       .get('https://snakeladder-c5dz.onrender.com/tables')
       .then(response => {
@@ -43,7 +20,7 @@ const CricketData = () => {
         console.log('Error response:', error.response);
         console.log('Error message:', error.message);
       });
-    }
+  }, []);
   
   if (cricketData === null) {
     return <div>Loading...</div>; // Show a loading indicator while data is being fetched

@@ -19,6 +19,7 @@ const SnakeLadderData = () => {
       const { collection, change } = data;
       console.log(`Received database change in collection ${collection}:`, change);
       // Fetch updated data from server when a change occurs
+      console.log(new Date().getTime(),"+++++++++++++++++++++")
       fetchSnakeLadderData();
     });
 
