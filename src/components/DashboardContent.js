@@ -25,7 +25,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get('https://snakeladder1.azurewebsites.net/getAllUser')
+      // .get('https://snakeladder1.azurewebsites.net/getAllUser')
+      .get('https://snakeladder-c5dz.onrender.com/getAllUser')
       .then(response => {
         setUserData(response.data);
         console.log(response.data);
@@ -81,7 +82,8 @@ const Dashboard = () => {
     const queryParamsString = queryParams.join('&');
 
     axios
-      .put(`https://snakeladder1.azurewebsites.net/updateUser?UserId=${UserId}&${queryParamsString}`)
+      //.put(`https://snakeladder1.azurewebsites.net/updateUser?UserId=${UserId}&${queryParamsString}`)
+      .put(`https://snakeladder-c5dz.onrender.com/updateUser?UserId=${UserId}&${queryParamsString}`)
       .then((response) => {
         console.log('User data updated successfully:', response.data);
         const updatedUserData = userData.map((user) => {

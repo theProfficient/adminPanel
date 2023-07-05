@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import io from 'socket.io-client';
 import './CricketStyle.css';
 
 const SnakeLadderData = () => {
@@ -8,9 +9,32 @@ const SnakeLadderData = () => {
   const [itemsPerPage] = useState(5);
 
   useEffect(() => {
+    const socket = io('http://localhost:3000'); // Replace with your Socket.IO server URL
+
+    socket.on('connect', () => {
+      console.log('Connected to Socket.IO server');
+    });
+
+    socket.on('databaseChange', (data) => {
+      const { collection, change } = data;
+      console.log(`Received database change in collection ${collection}:`, change);
+      // Fetch updated data from server when a change occurs
+      fetchSnakeLadderData();
+    });
+
+    return () => {
+      socket.disconnect(); // Disconnect from Socket.IO server on component unmount
+    };
+  }, []);
+
+  useEffect(() => {
+    fetchSnakeLadderData();
+  }, []);
+
+  const fetchSnakeLadderData = () => {
     axios
-      .get('https://snakeladder1.azurewebsites.net/getAllSnakeLadderData')
-      
+      // .get('https://snakeladder1.azurewebsites.net/getAllSnakeLadderData')
+       .get('https://snakeladder-c5dz.onrender.com/getAllSnakeLadderData')
       .then(response => {
         setSnakeLadderData(response.data.data);
         console.log(response.data.data);
@@ -20,7 +44,7 @@ const SnakeLadderData = () => {
         console.log('Error response:', error.response);
         console.log('Error message:', error.message);
       });
-  }, []);
+  };
 
   if (snakeLadderData === null) {
     return <div>Loading...</div>; // Show a loading indicator while data is being fetched
@@ -92,6 +116,6 @@ const SnakeLadderData = () => {
       </div>
     </div>
   );
-}
+};
 
 export default SnakeLadderData;
